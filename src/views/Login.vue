@@ -5,22 +5,16 @@
           <div>
             <label for="email">Email: </label>
             <input name="email"
-              v-model.lazy="registerData.email"
+              v-model.lazy="loginData.email"
               type="email"/>
           </div>
           <div>
             <label for="password">Password: </label>
             <input name="password"
-              v-model.lazy="registerData.password"
+              v-model.lazy="loginData.password"
               type="password"/>
           </div>
-          <div>
-            <label for="password">Repeat Password: </label>
-            <input name="repeatPassword"
-              v-model.lazy="repeatPassword"
-              type="password"/>
-          </div>
-          <button type="button" @click="submit">Click me!</button>
+          <button type="button" @click="submit">Login</button>
         </form>
     </div>
 </template>
@@ -31,7 +25,7 @@ import axios from "axios";
 export default {
   name: "register",
   data: () => ({
-    registerData: {
+    loginData: {
       email: "",
       password: ""
     },
@@ -42,7 +36,7 @@ export default {
       axios
         .get("http://localhost:3000/posts")
         // eslint-disable-next-line
-        .then(data => console.log(data))
+        .then(data => console.log(data.data))
     }
   }
 };

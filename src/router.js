@@ -21,10 +21,16 @@ export default new Router({
         import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
     {
-      path: "/register",
-      name: "register",
+      path: "/login",
+      name: "login",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Register.vue")
+        import(/* webpackChunkName: "about" */ "./views/Login.vue")
+    },
+    {
+      path: "/topics",
+      name: "topics",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Topics.vue")
     }
   ]
 });
