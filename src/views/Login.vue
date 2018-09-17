@@ -20,8 +20,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "register",
   data: () => ({
@@ -33,10 +31,7 @@ export default {
   }),
   methods: {
     submit: function() {
-      axios
-        .get("http://localhost:3000/posts")
-        // eslint-disable-next-line
-        .then(data => console.log(data.data))
+      this.$router.push("topics");
     }
   }
 };

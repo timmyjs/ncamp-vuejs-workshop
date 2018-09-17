@@ -25,27 +25,27 @@ export default {
   name: "topics",
   data: () => ({
     topics: [],
-    topicTitle: ''
+    topicTitle: ""
   }),
   created() {
     this.getTopics();
   },
   methods: {
-      getTopics: function() {
-        axios
-            .get("http://localhost:3000/topics")
-            .then(({ data }) => (this.topics = data));
-      },
-      addTopic: function(title) {
-        axios
-            .post("http://localhost:3000/topics", {title})
-            .then(() => this.getTopics());
-      },
-      removeTopic: function(id) {
-        axios
-            .delete(`http://localhost:3000/topics/${id}`)
-            .then(() => this.getTopics());
-      }
+    getTopics: function() {
+      axios
+        .get("http://localhost:3000/topics")
+        .then(({ data }) => (this.topics = data));
+    },
+    addTopic: function(title) {
+      axios
+        .post("http://localhost:3000/topics", { title })
+        .then(() => this.getTopics());
+    },
+    removeTopic: function(id) {
+      axios
+        .delete(`http://localhost:3000/topics/${id}`)
+        .then(() => this.getTopics());
+    }
   }
 };
 </script>
