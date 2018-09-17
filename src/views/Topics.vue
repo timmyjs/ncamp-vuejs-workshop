@@ -3,8 +3,9 @@
       <div>
           Topics:
           <div v-for="topic in topics" :key="topic.id">
-            <div>{{topic.title}}</div>
-            <button @click="removeTopic(topic.id)">Delete this topic</button>
+            <input v-model="topic.title" type="text" :disabled="editing !== topic.id"/>
+            <button @click="editTopic(topic)">{{editing !== topic.id ? "Edit topic" : "Update Topic"}}</button>
+            <button @click="removeTopic(topic.id)">Delete topic</button>
           </div>
       </div>
       <form>
@@ -25,7 +26,8 @@ export default {
   name: "topics",
   data: () => ({
     topics: [],
-    topicTitle: ""
+    topicTitle: "",
+    editing: -1
   }),
   created() {
     this.getTopics();
@@ -40,6 +42,16 @@ export default {
       axios
         .post("http://localhost:3000/topics", { title })
         .then(() => this.getTopics());
+    },
+    editTopic: function({ id, title }) {
+      if (this.editing === id) {
+        this.editing = -1;
+
+        return axios
+          .put(`http://localhost:3000/topics/${id}`, { title })
+          .then(() => this.getTopics());
+      }
+      this.editing = id;
     },
     removeTopic: function(id) {
       axios
