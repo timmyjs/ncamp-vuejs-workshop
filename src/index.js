@@ -3,6 +3,6 @@ import Vue from 'vue';
 new Vue({
     el: '#app',
     data: () => ({
-        test: 'test'
+        hello: 'Hello world'
     })
 });
