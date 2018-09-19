@@ -9,7 +9,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'Vue': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+      'vue': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
     }
   }
 };
