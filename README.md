@@ -52,16 +52,39 @@ npm install
 ```
 
 ### Compiles and hot-reloads for development
+The development environment is prepared for you. You have to run 2 commands in 2 separate terminals. The commands are as follows:
+
 ```
 npm run serve
 ```
+and: 
+```
+npm run fakeServer
+```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+The first command will compile the application, and watch the `src/index.js` file, while the second one will create a fake server which will serve our data and our application, on *localhost:3000*.
 
-### Lints and fixes files
-```
-npm run lint
-```
+*Hot reloading is not supported.* So please, when you make changes to the code, refresh the page to see the changes.
+
+
+A helper file has also been created. The file is `src/dataMethods.js`. You can use it for your CRUD operations, instead of writing them manually.
+
+There are several examples to help you along your way. They are on the following branches in the current repo:
+
+`binding-example` - The example on how to use v-model to bind some data from your input element to your Vue component.
+
+`v-if-example` - An example on how to use v-if to switch element visibility.
+
+`v-for-example` - An example on how to use the v-for Vue directive, to iterate through an array in your view.
+
+`manipulate-elements-example` - An example on how to use Vue to manipulate element properties (like disabling an input, or hiding an element).
+
+All the javascript code is contained in the `src/index.js` file, and all the HTMl is contained in the `public/index.html` file.
+
+
+The implementation on the `workshop` branch should be done in these files as well.
+
+
+If anything is unclear, please don't hesitate to ask.
+
+*Happy coding!*
