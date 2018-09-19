@@ -2,7 +2,7 @@
   "users": [],
   "topics": [
     {
-      "title": "first tit",
+      "title": "first title",
       "id": 1
     },
     {
@@ -16,10 +16,6 @@
     {
       "title": "fourth title",
       "id": 4
-    },
-    {
-      "title": "asdada",
-      "id": 5
     }
   ]
 }
