@@ -12,7 +12,13 @@
       <strong>We're sorry but ncamp-vuejs-workshop doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-        {{test}}
+        <ul>
+          <li
+            v-for="item in items">{{item.text}}</li>
+        </ul>
+        <div><strong>Add item</strong></div>
+        <input type="text" v-model="newItemText" />
+        <button @click="() => addToArray(newItemText)">Add</button>
     </div>
     <script src="./bundle.js"></script>
     </body>
