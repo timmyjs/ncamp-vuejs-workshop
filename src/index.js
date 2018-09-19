@@ -11,18 +11,19 @@ new Vue({
     el: '#app',
     data: () => ({
         userName: '',
-        loggedIn: false,
+        state: '',
         newTopicName: '',
+        topicEditing: {},
         topics: []
     }),
     methods: {
         logIn: function() {
-            this.loggedIn = true;
+            this.state = 'loggedIn';
 
             this.refreshData();
         },
 
-        refreshData() {
+        refreshData: function() {
             getTopics()
                 .then(data => this.topics = data);
         },
@@ -34,7 +35,13 @@ new Vue({
 
         updateTopic: function({id, title}) {
             updateTopic(id, title)
-                .then(this.refreshData);
+                .then(this.refreshData)
+                .then(() => this.state = 'loggedIn');
+        },
+
+        editTopic: function(topic) {
+            this.topicEditing = topic;
+            this.state = 'editing';
         },
 
         removeTopic: function(topicId) {

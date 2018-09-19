@@ -13,7 +13,7 @@
     </noscript>
     <div id="app">
       
-      <div v-if="!loggedIn">
+      <div v-if="state === ''">
         <label>Please enter your name</label>
         <div>
           <input type="text" v-model="userName"/>
@@ -21,17 +21,17 @@
         <button @click="logIn">Log In</button>
       </div>
 
-      <div v-if="loggedIn">
+      <div v-if="state === 'loggedIn'">
         <div>Hello {{userName}}!</div>
         <div>Please register your topics: </div>
         <ul>
           <li v-for="topic in topics">
-            <input v-model="topic.title"/>
+            <div>{{topic.title}}</div>
             <div>
               <button
-                @click="() => updateTopic(topic)">Update</button>
+                @click="editTopic(topic)">Update</button>
               <button
-                @click="() => removeTopic(topic.id)">Delete</button>
+                @click="removeTopic(topic.id)">Delete</button>
             </div>
           </li>
         </ul>
@@ -41,9 +41,18 @@
           <div>
             <input v-model="newTopicName"/>
           </div>
-          <button @click="() => addTopic(newTopicName)">Add topic</button>
+          <button @click="addTopic(newTopicName)">Add topic</button>
         </div>
       </div>
+
+      <div v-if="state === 'editing'">
+          <div>Please edit your topic: </div>
+          <input v-model="topicEditing.title"/>
+          <div>
+            <button
+              @click="updateTopic(topicEditing)">Update</button>
+          </div>
+        </div>
 
     </div>
     <script src="./bundle.js"></script>
