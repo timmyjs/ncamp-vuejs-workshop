@@ -150,7 +150,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_dist_vue_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.esm.js */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\nnew vue_dist_vue_esm_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: '#app',\n    data: () => ({\n        test: 'test'\n    })\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_dist_vue_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.esm.js */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\nnew vue_dist_vue_esm_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: '#app',\n    data: () => ({\n        disableMe: false,\n        visible: true\n    }),\n    methods: {\n        toggleInputDisabled: function() {\n            this.disableMe = !this.disableMe;\n        },\n        toggleShowHide: function() {\n            this.visible = !this.visible;\n        }\n    }\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

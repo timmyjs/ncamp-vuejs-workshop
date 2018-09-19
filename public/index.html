@@ -12,7 +12,29 @@
       <strong>We're sorry but ncamp-vuejs-workshop doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-        {{test}}
+      
+      <label>Disabling example:</label>
+      <div>
+        <input :disabled="disableMe" />
+        <div>
+          <button 
+            @click="toggleInputDisabled"
+            type="button">Toggle enable/disable</button>
+        </div>
+      </div>
+
+      <br>
+
+      <label>Hiding example:</label>
+      <div>
+        <button
+          type="button"
+          @click="toggleShowHide">Toggle show/hide element</button>
+        <div v-if="visible">
+          <strong>I am visible!!</strong>
+        </div>
+      </div>
+
     </div>
     <script src="./bundle.js"></script>
     </body>
