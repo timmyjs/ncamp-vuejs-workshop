@@ -51,7 +51,7 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### How to compile for development
 The development environment is prepared for you. You have to run 2 commands in 2 separate terminals. The commands are as follows:
 
 ```
@@ -68,6 +68,8 @@ The first command will compile the application, and watch the `src/index.js` fil
 
 
 A helper file has also been created. The file is `src/dataMethods.js`. You can use it for your CRUD operations, instead of writing them manually.
+
+### Examples to help you:
 
 There are several examples to help you along your way. They are on the following branches in the current repo:
 
