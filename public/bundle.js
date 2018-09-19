@@ -150,7 +150,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\nnew vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: '#app',\n    data: () => ({\n        test: 'test'\n    })\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\nnew vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: '#app',\n    data: () => ({\n        state: 'state1'\n    }),\n    methods: {\n        switchState: function() {\n            if (this.state === 'state1') {\n                this.state = 'state2';\n                return this.state;\n            }\n            this.state = 'state1';\n        }\n    }\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
