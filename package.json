@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "serve": "webpack --config webpack.config.js --watch",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
     "fakeServer": "json-server --watch db.json"
   },
   "dependencies": {
